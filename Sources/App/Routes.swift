@@ -2,24 +2,14 @@ import Vapor
 
 extension Droplet {
     func setupRoutes() throws {
-        get("hello") { req in
-            var json = JSON()
-            try json.set("hello", "world")
-            return json
+        get("graphiql") { _ in
+            return try self.view.make("graphiql")
         }
 
-        get("plaintext") { req in
-            return "Hello, world!"
+        all("api") { req in
+            let query = req.data["query"]?.string
+            let result = try schema.execute(request: query!)
+            return result.description
         }
-
-        // response to requests to /info domain
-        // with a description of the request
-        get("info") { req in
-            return req.description
-        }
-
-        get("description") { req in return req.description }
-        
-        try resource("posts", PostController.self)
     }
 }

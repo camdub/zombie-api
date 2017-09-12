@@ -1,35 +1,20 @@
-//
-//  SchemaTest.swift
-//  Vapor
-//
-//  Created by Cameron Woodmansee on 8/29/17.
-//
-//
-
 import XCTest
+@testable import App
 
-class SchemaTest: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class SchemaTest: TestCase {
+    func testExample() throws {
+        let query = "query getTeams { team { name } }"
+        let result = try schema.execute(request: query)
+        XCTAssertEqual(result, [])
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+}
+
+
+extension SchemaTest {
+    /// This is a requirement for XCTest on Linux
+    /// to function properly.
+    /// See ./Tests/LinuxMain.swift for examples
+    static let allTests = [
+        ("getTeams", testExample)
+    ]
 }
