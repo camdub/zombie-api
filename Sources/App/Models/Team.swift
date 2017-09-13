@@ -3,13 +3,14 @@ import Graphiti
 
 final class Team {
     var name: String
-    var id: String
+    var abbv: String
+    var logo: String
 
-    init(id: String, name: String) {
-        self.id = id
+    init(name: String, abbv: String, logo: String) {
         self.name = name
+        self.abbv = abbv
+        self.logo = logo
     }
 }
 
 extension Team: OutputType {}
-
