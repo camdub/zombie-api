@@ -1,2 +1,4 @@
 included:
   - Sources
+excluded:
+  - Sources/App/Models/Meow.swift

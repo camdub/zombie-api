@@ -8,6 +8,12 @@
       "version": "1.1.0"
     },
     {
+      "package": "BSON",
+      "reason": null,
+      "repositoryURL": "https://github.com/OpenKitten/BSON.git",
+      "version": "5.1.5"
+    },
+    {
       "package": "Bits",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/bits.git",
@@ -18,6 +24,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/ctls.git",
       "version": "1.1.2"
+    },
+    {
+      "package": "Cheetah",
+      "reason": null,
+      "repositoryURL": "https://github.com/OpenKitten/Cheetah.git",
+      "version": "1.0.3"
     },
     {
       "package": "Console",
@@ -38,6 +50,12 @@
       "version": "2.1.1"
     },
     {
+      "package": "CryptoKitten",
+      "reason": null,
+      "repositoryURL": "https://github.com/OpenKitten/CryptoKitten.git",
+      "version": "0.2.3"
+    },
+    {
       "package": "Debugging",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/debugging.git",
@@ -48,18 +66,6 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/engine.git",
       "version": "2.2.1"
-    },
-    {
-      "package": "Fluent",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.3.0"
-    },
-    {
-      "package": "FluentProvider",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/fluent-provider.git",
-      "version": "1.1.1"
     },
     {
       "package": "GraphQL",
@@ -80,6 +86,12 @@
       "version": "2.2.0"
     },
     {
+      "package": "KittenCore",
+      "reason": null,
+      "repositoryURL": "https://github.com/OpenKitten/KittenCore.git",
+      "version": "0.2.3"
+    },
+    {
       "package": "Leaf",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/leaf.git",
@@ -90,6 +102,18 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/leaf-provider.git",
       "version": "1.1.0"
+    },
+    {
+      "package": "Meow",
+      "reason": null,
+      "repositoryURL": "https://github.com/OpenKitten/Meow.git",
+      "version": "0.2.0"
+    },
+    {
+      "package": "MongoKitten",
+      "reason": null,
+      "repositoryURL": "https://github.com/OpenKitten/MongoKitten.git",
+      "version": "4.0.14"
     },
     {
       "package": "Multipart",
@@ -116,10 +140,10 @@
       "version": "2.1.0"
     },
     {
-      "package": "SQLite",
+      "package": "Schrodinger",
       "reason": null,
-      "repositoryURL": "https://github.com/vapor/sqlite.git",
-      "version": "2.1.0"
+      "repositoryURL": "https://github.com/OpenKitten/Schrodinger.git",
+      "version": "1.0.1"
     },
     {
       "package": "Sockets",

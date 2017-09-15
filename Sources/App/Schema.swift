@@ -1,12 +1,8 @@
 import GraphQL
 import Graphiti
+import Meow
 
-let teamData = [
-    Team(name: "Los Angeles Chargers", abbv: "LAC", logo: "https://dl.airtable.com/Exq41QaRS6xxRG1ecKO0_cardinals.svg"),
-    Team(name: "Washington Redskins", abbv: "WSH", logo: ""),
-    Team(name: "Dallas Cowboys", abbv: "DAL", logo: "")
-]
-
+// swiftlint:disable force_try
 let schema = try! Schema<Void, Void> { schema in
     try schema.object(type: Team.self) { team in
         team.description = "NFL Teams (there are 32)"
@@ -32,12 +28,18 @@ let schema = try! Schema<Void, Void> { schema in
 
     try schema.query { query in
         struct TeamArguments: Arguments {
-            let teamId: String?
-            static let descriptions = ["id": "id of the team, if omitted return all the teams."]
+            let abbv: String?
+            static let descriptions = ["abbv": "Three letter abbreviation for the team"]
         }
-        try query.field(name: "team", type: [Team].self) { (_, _, _, _) in
-            // return all data for now since no db setup
-            return teamData
+        try query.field(name: "team", type: [Team].self) { (_, arguments: TeamArguments, _, _) in
+            if let abbv = arguments.abbv {
+                if let team = try Team.findOne { team in team.abbv == abbv } {
+                    return [team]
+                }
+                return []
+            }
+            let teams = try Team.find()
+            return Array(teams)
         }
     }
 }

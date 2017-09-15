@@ -1,0 +1,5 @@
+sources="Sources/App/Models"
+output="Sources/App/Models/Meow.swift"
+
+# Compiler complained if access was internal the default
+accesslevel="public"
