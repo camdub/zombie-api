@@ -3,7 +3,6 @@ import Foundation
 @testable import Vapor
 import XCTest
 import Testing
-import FluentProvider
 
 extension Droplet {
     static func testable() throws -> Droplet {
@@ -23,7 +22,7 @@ extension Droplet {
 
 class TestCase: XCTestCase {
     override func setUp() {
-        Node.fuzzy = [Row.self, JSON.self, Node.self]
+        Node.fuzzy = [JSON.self, Node.self]
         Testing.onFail = XCTFail
     }
 }
