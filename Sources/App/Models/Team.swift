@@ -33,10 +33,10 @@ public final class Team: Model {
 		guard let document = source as? BSON.Document else {
 			throw Meow.Error.cannotDeserialize(type: Team.self, source: source, expectedPrimitive: BSON.Document.self);
 		}
-		
-		self.logo = (try document.unpack(Key.logo.keyString)) 
-		self.abbv = (try document.unpack(Key.abbv.keyString)) 
-		self.name = (try document.unpack(Key.name.keyString)) 
+
+		self.logo = (try document.unpack(Key.logo.keyString))
+		self.abbv = (try document.unpack(Key.abbv.keyString))
+		self.name = (try document.unpack(Key.name.keyString))
 	}
 	public var _id = Meow.pool.newObjectId() { didSet { Meow.pool.free(oldValue) } }
 

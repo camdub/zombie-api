@@ -4,7 +4,8 @@ import Meow
 let config = try Config()
 try config.setup()
 
-try Meow.init("mongodb://localhost:27017/zombie-dev")
+let mongoUrl = config["mongodb", "server"]?.string
+try Meow.init(mongoUrl!)
 
 let drop = try Droplet(config)
 try drop.setup()
