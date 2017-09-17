@@ -1,3 +1,4 @@
 {
-	"foo": "foo-bar"
+    "airtable_api_key": "$AIRTABLE_API_KEY",
+    "airtable_url": "https://api.airtable.com/v0/appzDJh0ZHGK7nQcJ"
 }

@@ -8,6 +8,8 @@ extension Config {
 
         try setupProviders()
         try setupPreparations()
+
+        addConfigurable(command: SeedCommand.init, name: "seed")
     }
 
     /// Configure providers
